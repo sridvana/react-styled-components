@@ -1,16 +1,16 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const StyledHeader = ({ title }) => {
+const StyledHeader = ({ title, className }) => {
   return (
-    <StyledSectionForHeader>
+    <section className={className}>
       <h1>{title}</h1>
       <h2 className="random">One more heading</h2>
-    </StyledSectionForHeader>
+    </section>
   )
 }
 
-const StyledSectionForHeader = styled.section`
+export default styled(StyledHeader)`
   background: red;
   transition: all 2s ease-in-out;
   h1 {
@@ -22,6 +22,4 @@ const StyledSectionForHeader = styled.section`
   &:hover {
     background: black;
   }
-`
-
-export default StyledHeader
+`;
