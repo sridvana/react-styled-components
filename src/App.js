@@ -1,33 +1,22 @@
-import React from 'react';
-import './App.css';
-import AlternativeHeader from './components/AlternativeHeader';
-import { createGlobalStyle } from 'styled-components';
-import { PropsButton } from './components/PropsButton';
-import { BigButton } from './components/PropsButton';
-import { DangerButton } from './components/PropsButton';
-import { SuccessButton } from './components/PropsButton';
-
-const GlobalStyle = createGlobalStyle`
-  * {
-  margin: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif ;
-}
-`;
+import React from "react";
+import "./App.css";
+import Hero from "./components/Hero";
+import Banner from "./components/Banner";
+import img1 from "./images/image-1.jpeg";
+import img2 from "./images/image-2.jpeg";
+import { DangerButton } from './examples/PropsButton';
 
 function App() {
   return (
     <div>
-      <GlobalStyle />
-      <AlternativeHeader title="hello from app.js" />
-      <PropsButton color="blue">Props Button One</PropsButton>
-      <DangerButton padding="4rem">Danger Button </DangerButton>
-      <DangerButton big>Danger Button </DangerButton>
-      <SuccessButton>Success Button </SuccessButton>
-      <PropsButton>Props Button Three (default color)</PropsButton>
-      <BigButton>Big Button</BigButton>
+      {/* <Hero img="./images/image-1.jpeg" /> */}
+      <Hero img={img1} >
+        <Banner title="this is my title" color='white'>
+          <DangerButton>Click me</DangerButton>
+        </Banner>
+      </Hero>
+      <Hero img={img2} />
+      <Hero big/>
     </div>
   );
 }
